@@ -14,3 +14,9 @@ function MyInfo() {
 }
 
 export default MyInfo
+
+// function App() {
+//   return (
+//     <MyInfo />
+//   )
+// }
