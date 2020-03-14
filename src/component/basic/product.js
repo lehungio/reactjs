@@ -21,3 +21,11 @@ function Product(props) {
 }
 
 export default Product
+
+// App.js
+// const productComponent = ProductsData.map(item => <Product key={item.id} name={item.name} product={item} />)
+// return (
+//   <div>
+//     {productComponent}
+//   </div>
+// }

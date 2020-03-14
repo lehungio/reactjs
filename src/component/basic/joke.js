@@ -28,8 +28,14 @@ function Joke(props) {
  
 export default Joke
 
+// jokesData.map(joke => <Joke question={joke.question} punchLine={joke.punchLine} />)
+// JokesData.map(joke => <Joke key={joke.id} question={joke.question} punchLine={joke.punchLine} />)
+
+// const jokeComponent = JokesData.map(joke => <Joke key={joke.id} question={joke.question} punchLine={joke.punchLine} />)
+
 /* <Joke punchLine="It’s hard to explain puns to kleptomaniacs because they always take things literally." />
-            
+
+// hardcode
 <Joke 
     question="What's the best thing about Switzerland?" 
     punchLine="I don't know, but the flag is a big plus!"
