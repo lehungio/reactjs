@@ -38,7 +38,10 @@ import './style/contact-card.css';
 // state
 // import SampleState from './component/basic/sample/state';
 // import SampleStateLogin from './component/basic/sample/state-login'
-import SampleStateChanging from './component/basic/sample/state-changing'
+// import SampleStateChanging from './component/basic/sample/state-changing'
+// react-life-circle
+// import SampleReactLifeCircle from './component/basic/sample/react-life-circle'
+import SampleComponentDidUpdate from './component/basic/sample/component-did-update'
 
 // <hr />
 // <h2>{this.state.name}</h2>
@@ -53,21 +56,49 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      // todos: todosData
+      // todos: TodosData
     }
+    // this.handleChange = this.handleChange.bind(this)
   }
+
+  // todo handleChange on checkbox
+  // handleChange(id) {
+  //   // Update state so that the item with the given id flips `completed` from false to true (or vise versa)
+  //   // Remember not to modify prevState directly, but instead to return a new version of state with the change you want included in that update. (Think how you might use the `.map` method to do this)
+  //   // console.log("Changed", id)
+  //   this.setState(prevState => {
+  //     const updatedTodos = prevState.todos.map(todo => {
+  //       if (todo.id === id) {
+  //         // todo.completed = !todo.completed // direct edit previous stage
+  //         // new array copy by previous state
+  //         return {
+  //           ...todo,
+  //           completed: !todo.completed
+  //         }
+  //       }
+  //       return todo
+  //     })
+  //     console.log(prevState.todos)
+  //     console.log(updatedTodos)
+  //     return {
+  //       todos: updatedTodos
+  //     }
+  //   })
+  // }
     
   myMethod() {
     return "someStyle"
   }
   
   render() {
-    // const TodoComponents = TodosData.map(item => <TodoItem key={item.id} item={item} />)
+    // const TodoComponents = TodosData.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange} />)
 
     return (
       <div>
         {/* {TodoComponents} */}
-        <SampleStateChanging />
+        {/* <SampleStateChanging /> */}
+        {/* <SampleReactLifeCircle /> */}
+        <SampleComponentDidUpdate />
       </div>
     )
   }
