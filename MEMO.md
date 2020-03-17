@@ -82,6 +82,9 @@ this.setState({})
 ## Event Handlings
 - Reference https://reactjs.org/docs/events.html#supported-events
 
+## Render
+- Condition render
+
 
 ## HTTP
 

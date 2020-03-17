@@ -41,7 +41,8 @@ import './style/contact-card.css';
 // import SampleStateChanging from './component/basic/sample/state-changing'
 // react-life-circle
 // import SampleReactLifeCircle from './component/basic/sample/react-life-circle'
-import SampleComponentDidUpdate from './component/basic/sample/component-did-update'
+// import SampleComponentDidUpdate from './component/basic/sample/component-did-update'
+import SampleRenderCondition from './component/basic/sample/render-condition'
 
 // <hr />
 // <h2>{this.state.name}</h2>
@@ -57,6 +58,7 @@ class App extends React.Component {
     super()
     this.state = {
       // todos: TodosData
+      isLoading: true
     }
     // this.handleChange = this.handleChange.bind(this)
   }
@@ -89,6 +91,14 @@ class App extends React.Component {
   myMethod() {
     return "someStyle"
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isLoading: false
+      })
+    }, 1500)
+  }
   
   render() {
     // const TodoComponents = TodosData.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange} />)
@@ -98,7 +108,8 @@ class App extends React.Component {
         {/* {TodoComponents} */}
         {/* <SampleStateChanging /> */}
         {/* <SampleReactLifeCircle /> */}
-        <SampleComponentDidUpdate />
+        {/* <SampleComponentDidUpdate /> */}
+        <SampleRenderCondition isLoading={this.state.isLoading} />
       </div>
     )
   }
