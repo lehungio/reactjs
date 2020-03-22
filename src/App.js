@@ -42,7 +42,7 @@ import './style/contact-card.css';
 // react-life-circle
 // import SampleReactLifeCircle from './component/basic/sample/react-life-circle'
 // import SampleComponentDidUpdate from './component/basic/sample/component-did-update'
-import SampleRenderCondition from './component/basic/sample/render-condition'
+// import SampleRenderCondition from './component/basic/sample/render-condition'
 
 // <hr />
 // <h2>{this.state.name}</h2>
@@ -58,7 +58,8 @@ class App extends React.Component {
     super()
     this.state = {
       // todos: TodosData
-      isLoading: true
+      // isLoading: true
+      unreadMessages: ['a', 'b']
     }
     // this.handleChange = this.handleChange.bind(this)
   }
@@ -92,13 +93,14 @@ class App extends React.Component {
     return "someStyle"
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        isLoading: false
-      })
-    }, 1500)
-  }
+  // sample componentDidMount
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.setState({
+  //       isLoading: false
+  //     })
+  //   }, 1500)
+  // }
   
   render() {
     // const TodoComponents = TodosData.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange} />)
@@ -109,7 +111,11 @@ class App extends React.Component {
         {/* <SampleStateChanging /> */}
         {/* <SampleReactLifeCircle /> */}
         {/* <SampleComponentDidUpdate /> */}
-        <SampleRenderCondition isLoading={this.state.isLoading} />
+        {/* <SampleRenderCondition isLoading={this.state.isLoading} /> */}
+        {
+          this.state.unreadMessages.length > 0 &&  // use && instead of null
+            <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
+        }
       </div>
     )
   }
