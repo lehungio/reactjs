@@ -43,52 +43,53 @@ import './style/contact-card.css';
 // import SampleReactLifeCircle from './component/basic/sample/react-life-circle'
 // import SampleComponentDidUpdate from './component/basic/sample/component-did-update'
 // import SampleRenderCondition from './component/basic/sample/render-condition'
-import SampleRenderConditionExercise from './component/basic/sample/render-condition-exercise'
+// import SampleRenderConditionExercise from './component/basic/sample/render-condition-exercise'
 
 // <hr />
 // <h2>{this.state.name}</h2>
 // <p>{this.state.age} years old</p>
 
 // todo
-// import TodoItem from './component/todo/todo-item';
-// import TodosData from './component/todo/todos-data';
+import TodoItem from './component/todo/todo-item';
+import TodosData from './component/todo/todos-data';
 
 // class-based component
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      // todos: TodosData
+      todos: TodosData
       // isLoading: true
-      unreadMessages: ['a', 'b']
+      // unreadMessages: ['a', 'b']
     }
-    // this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   // todo handleChange on checkbox
-  // handleChange(id) {
-  //   // Update state so that the item with the given id flips `completed` from false to true (or vise versa)
-  //   // Remember not to modify prevState directly, but instead to return a new version of state with the change you want included in that update. (Think how you might use the `.map` method to do this)
-  //   // console.log("Changed", id)
-  //   this.setState(prevState => {
-  //     const updatedTodos = prevState.todos.map(todo => {
-  //       if (todo.id === id) {
-  //         // todo.completed = !todo.completed // direct edit previous stage
-  //         // new array copy by previous state
-  //         return {
-  //           ...todo,
-  //           completed: !todo.completed
-  //         }
-  //       }
-  //       return todo
-  //     })
-  //     console.log(prevState.todos)
-  //     console.log(updatedTodos)
-  //     return {
-  //       todos: updatedTodos
-  //     }
-  //   })
-  // }
+  handleChange(id) {
+    // Update state so that the item with the given id flips `completed` from false to true (or vise versa)
+    // Remember not to modify prevState directly, but instead to return a new version of state with the change you want included in that update. (Think how you might use the `.map` method to do this)
+    // console.log("Changed", id)
+    this.setState(prevState => {
+      const updatedTodos = prevState.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed // direct edit previous stage
+          
+          // TODO new array copy by previous state
+          // return {
+          //   ...todo,
+          //   completed: !todo.completed
+          // }
+        }
+        return todo
+      })
+      console.log(prevState.todos)
+      console.log(updatedTodos)
+      return {
+        todos: updatedTodos
+      }
+    })
+  }
     
   myMethod() {
     return "someStyle"
@@ -104,11 +105,17 @@ class App extends React.Component {
   // }
   
   render() {
-    // const TodoComponents = TodosData.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange} />)
+    const TodoComponents = TodosData.map(item => 
+      <TodoItem 
+        key={item.id} 
+        item={item} 
+        handleChange={this.handleChange} 
+      />
+    )
 
     return (
       <div>
-        {/* {TodoComponents} */}
+        {TodoComponents}
         {/* <SampleStateChanging /> */}
         {/* <SampleReactLifeCircle /> */}
         {/* <SampleComponentDidUpdate /> */}
@@ -120,7 +127,7 @@ class App extends React.Component {
             <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
         } */}
 
-        <SampleRenderConditionExercise />
+        {/* <SampleRenderConditionExercise /> */}
       </div>
     )
   }

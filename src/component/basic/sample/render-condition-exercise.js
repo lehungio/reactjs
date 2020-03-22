@@ -38,10 +38,13 @@ class ClassName extends React.Component {
 
   render() {
     let buttonText = this.state.isLoggedIn ? 'LOG OUT' : 'LOG IN'
+    let displayText = this.state.isLoggedIn ? 'Logged in' : 'Logged out'
+    
     return (
       <div>
         {/* CLASS TEMPLATE */}
         <button onClick={this.handleClick}>{buttonText}</button>
+        <h1>{displayText}</h1>
       </div>
     )
   }
