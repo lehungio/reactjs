@@ -43,6 +43,7 @@ import './style/contact-card.css';
 // import SampleReactLifeCircle from './component/basic/sample/react-life-circle'
 // import SampleComponentDidUpdate from './component/basic/sample/component-did-update'
 // import SampleRenderCondition from './component/basic/sample/render-condition'
+import SampleRenderConditionExercise from './component/basic/sample/render-condition-exercise'
 
 // <hr />
 // <h2>{this.state.name}</h2>
@@ -112,10 +113,14 @@ class App extends React.Component {
         {/* <SampleReactLifeCircle /> */}
         {/* <SampleComponentDidUpdate /> */}
         {/* <SampleRenderCondition isLoading={this.state.isLoading} /> */}
-        {
-          this.state.unreadMessages.length > 0 &&  // use && instead of null
+        
+        {/* // use && instead of null */}
+        {/* {
+          this.state.unreadMessages.length > 0 &&  
             <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
-        }
+        } */}
+
+        <SampleRenderConditionExercise />
       </div>
     )
   }
