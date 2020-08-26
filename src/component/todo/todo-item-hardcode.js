@@ -1,6 +1,6 @@
 import React from "react"
 
-function TodoItem() {
+function TodoItemHardcode() {
     return (
         <div className="todo-item">
             <input type="checkbox" />
@@ -9,4 +9,4 @@ function TodoItem() {
     )
 }
 
-export default TodoItem
+export default TodoItemHardcode
